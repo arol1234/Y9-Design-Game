@@ -1,4 +1,12 @@
+from pygame import mixer
+import time
 
+mixer.init() #Initialzing pyamge mixer
+mixer.music.load('giornos-theme-kaiya-remix.mp3') #Loading Music File
+
+#Timer based
+mixer.music.play() #Playing Music with Pygame
+time.sleep(5)
 print("________________________________________________________________________________________ |")                    
 print("| From: Jabbari: Welcome to my adventure. This game is base off of Jabbari Jumps.       |")
 print("| I need you to help me slove these problems. With each proeblem solved you wil.        |")
@@ -160,8 +168,16 @@ while True:
 print("_____________________________________________________________________________ |")                    
 print("|   From: Jabbari:  Great Job! You did it. You completed all the challanges   |")
 print("|    and figuered out what my favorite food was. I know it may have seemed    |")
-print("|      challenging but thanks for playing and helping me with my adventure.  |")                                  
-print("__________________________________________________________________________   |")   
+print("|      challenging but thanks for playing and helping me with my adventure.   |")   
+print("| Enter Y to stop music                                                        |")                               
+print("|_____________________________________________________________________________ |")   
+mixer.music.stop()
+mixer.music.play()
+answer = input("Enter y ")
+while 'y' not in answer:
+    print ("Sorry, incorrect")
+    answer = input('Enter y to stop ')
+mixer.music.stop()
 
 
     
